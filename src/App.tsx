@@ -1,35 +1,38 @@
 import Avatar from "./components/Avatar";
 
 function App() {
-	const bart = {
-		image: "https://www.stickees.com/files/cartoon/the-simpsons/2243-bart-simpson-greeting.png",
-		firstName: "Bart",
-		lastName: "Simpson",
-		nbDonuts: 0,
-	};
-	const homer = {
-		image: "https://www.stickees.com/files/cartoon/the-simpsons/2246-homer-simpson-donut-2.png",
-		firstName: "Homer",
-		lastName: "Simpson",
-		nbDonuts: 4200,
-	};
+	const theSimpsons = [
+		{
+			image: "https://www.stickees.com/files/cartoon/the-simpsons/2243-bart-simpson-greeting.png",
+			firstName: "Bart",
+			lastName: "Simpson",
+			nbDonuts: 0,
+		},
+		{
+			image: "https://www.stickees.com/files/cartoon/the-simpsons/2246-homer-simpson-donut-2.png",
+			firstName: "Homer",
+			lastName: "Simpson",
+			nbDonuts: 4200,
+		},
+		{
+			image: "https://www.stickees.com/files/cartoon/the-simpsons/2252-marge-simpson-sticker.png",
+			firstName: "Marge",
+			lastName: "Simpson",
+			nbDonuts: 2,
+		},
+	];
 
 	return (
 		<div className="App">
-			{/* Composant pour Bart Simpson */}
-			<Avatar
-				image={bart.image}
-				firstName={bart.firstName}
-				lastName={bart.lastName}
-				nbDonuts={bart.nbDonuts}
-			/>
-			{/* Composant pour Homer Simpson */}
-			<Avatar
-				image={homer.image}
-				firstName={homer.firstName}
-				lastName={homer.lastName}
-				nbDonuts={homer.nbDonuts}
-			/>
+			{theSimpsons.map((simpson) => (
+				<Avatar
+					key={simpson.firstName}
+					image={simpson.image}
+					firstName={simpson.firstName}
+					lastName={simpson.lastName}
+					nbDonuts={simpson.nbDonuts}
+				/>
+			))}
 		</div>
 	);
 }
