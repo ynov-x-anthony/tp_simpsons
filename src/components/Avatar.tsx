@@ -5,7 +5,11 @@ interface AvatarProps {
 }
 
 function Avatar({ image, firstName, lastName }: AvatarProps) {
-	return <img src={image} alt={`${firstName} ${lastName}`} />;
+	return (
+		<div>
+			<img src={image} alt={`${firstName} ${lastName}`} />
+		</div>
+	);
 }
 
 export default Avatar;
