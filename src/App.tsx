@@ -1,3 +1,4 @@
+import "./App.css";
 import Avatar from "./components/Avatar";
 
 function App() {
